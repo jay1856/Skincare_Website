@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weoncare</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><!-- Favicon  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fahkwang: ['Fahkwang', 'sans-serif'],
+                    },
+                    keyframes:{
+                        move:{
+                            '50%' :{transform : 'translateY(-1rem)' }
+                        },
+                        scaleUp:{
+                            '0%':{transform : 'scale(0.5)'},
+                            '50%':{transform : 'scale(1.2)'},
+                            '100%':{transform : 'scale(0.5)'},
+                        }
+                    },
+                    animation:{
+                        movingY:"move  3s linear infinite",
+                        scalingUp:'scaleUp 3s linear infinite',
+                    },
+                },
+                
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-[#f4f0eb] font-fahkwang tracking-wider text-[#36322D]">
+    <header id="navbar" class="fixed w-full top-0 left-0 z-50 bg-[#f4f0eb]">
+        <nav class="container mx-auto flex items-center justify-between px-4 md:px-8 md:py-4">
+            
+            <div class="lg:hidden cursor-pointer z-50 ">
+                <i id="menu" class="ri-menu-2-line text-xl md:text-2xl hover:font-bold"></i>
+            </div>
+
+            <div>
+                <a href="index.html"><img src="assets/Weon.png  " alt="Weon Logo" class="w-28 h-16 md:w-36 md:h-20"></a>
+            </div>
+
+            <div id="nav-menu"
+                class="absolute top-0 left-[-100%] w-full min-h-[80vh] backdrop-blur-sm flex items-center justify-center duration-300 overflow-hidden lg:static lg:min-h-fit lg:w-auto">
+                <ul class="flex flex-col item-center gap-6 lg:flex-row lg:gap-8">
+                    <li>
+                        <a href="#home" class="active:bg-[#f48b08] nav-link text-gray-500 hover:text-[#36322D] font-bold duration-300 ">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="#shop" class="nav-link text-gray-500 hover:text-[#36322D] font-bold duration-300">SHOP</a>
+                    </li>
+
+                    <li>
+                        <a href="#about" class="nav-link text-gray-500 hover:text-[#36322D] font-bold duration-300">ABOUT
+                            US</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link text-gray-500 hover:text-[#36322D] font-bold duration-300">BLOG</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact"
+                            class="nav-link text-gray-500 hover:text-[#36322D] font-bold duration-300">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex items-center justify-between gap-5">
+                <a href="#"><i class="ri-shopping-bag-line text-xl md:text-2xl hover:font-bold"></i></a>
+                <a href="#"><i class="ri-user-3-line text-xl md:text-2xl hover:font-bold"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home -->
+        <section id="home" class="relative py-20 md:py-28">
+            <div class="container mx-auto p-[19px] md:p-[32px]">
+
+                <div class="flex flex-col items-center gap-6 md:flex-row ">
+                    <!-- content -->
+                    <div class="w-full space-y-5 md:w-1/2">
+                        <h1 class="text-3xl md:text-4xl xl:text-5xl font-bold">
+                            Your Path <br> to
+                            <br>
+                            <span class="text-[#f48b08]">Glowing Skin</span>
+                        </h1>
+
+                        <p>
+                            Our product formulations are crafted exclusively with <b>natural ingredients</b>, proudly <b>free</b> from any <b>harmful chemicals</b>. With a comprehensive range catering to diverse skin types and concerns, our highly knowledgeable team stands ready to provide personalized guidance in selecting the perfect product to address your unique needs.
+                        </p>
+
+                        <div class="flex flex-row gap-2 sm:flex-row md:gap-4 lg:pt-5 xl:pt-10 ">
+                            <button
+                                class="btn border border-[#f48b08] bg-[#f48b08] duration-300 bg-transparent rounded-md px-2 md:px-5 py-2 hover:opacity-90 hover:bg-[#f48b08]">
+                                <span class="font-bold"><a href="#shop">SHOP NOW</a></span>
+                                <i class="ri-arrow-right-line ml-2 "></i>
+                            </button>
+
+                            <button
+                                class="btn border border-[#f48b08] bg-[#f48b08] duration-300 bg-transparent rounded-md px-2 md:px-5 py-2 hover:opacity-90 hover:bg-[#f48b08]">
+                                <span class="font-bold"><a href="#about">ABOUT US</a></span>
+                                <i class="ri-arrow-right-line ml-2 "></i>
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-5 text-lg font lg:pt-10">
+                            <i class="ri-instagram-line hover:text-[#f48b08] duration 300 cursor-pointer"></i>
+                            <i class="ri-twitter-x-line hover:text-[#f48b08] duration 300 cursor-pointer"></i>
+                            <i class="ri-facebook-fill hover:text-[#f48b08] duration 300 cursor-pointer"></i>
+                            <i class="ri-linkedin-fill hover:text-[#f48b08] duration 300 cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-full relative md:w-1/2">
+                        <!-- blob 1 -->
+                        <div class="w-4/5 h-4/5 bg-[#f48b08] rounded-full blur-3xl -z-10 animate-scalingUp absolute top-[28%] left-[15%]"></div>
+                        <img src="assets/bitmap.png" alt="home_image" class="">
+
+                        <div class="absolute -top-10 right-0 opacity-30 animate-movingY">
+                            <i class="ri-leaf-line text-6xl text-[#f48b08]"></i>
+                        </div>
+
+                        <div class="absolute top-10 left-0 opacity-30 animate-scalingUp">
+                            <i class="ri-flower-line text-6xl text-[#f48b08]"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <div class="bg-white p-10 flex justify-between items-center">
+            <div class="container mx-auto w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+                <!-- card 1 -->
+                <div class="border broder-[#36322D] p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-truck-line text-3xl md:text:4xl xl:text-5xl"></i>
+                        <h1 class="md:text-lg font-bold">Free <br>Delivery</h1>
+                    </div>
+                    <p class="italic pt-4 opacity-80">For Orders Over &#x20B9 500</p>
+                </div>
+                <!-- card 2 -->
+                <div class="border broder-[#36322D] p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-secure-payment-fill text-3xl md:text:4xl xl:text-5xl"></i>
+                        <h1 class="md:text-lg font-bold">Secure <br>Payment</h1>
+                    </div>
+                    <p class="italic pt-4 opacity-80">All Cards are Accepted</p>
+                </div>
+                <!-- card 3 -->
+                <div class="border broder-[#36322D] p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+                    <div class="flex items-center gap-5">
+                        <i class="ri-money-rupee-circle-line text-3xl md:text:4xl xl:text-5xl"></i>
+                        <h1 class="md:text-lg font-bold">Money <br>Back</h1>
+                    </div>
+                    <p class="italic pt-4 opacity-80">If the Item Don't suits you</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us -->
+        <section id="about" class="relative overflow-hidden">
+            <div class="flex flex-col items-center gap-3 text-center mx-10 my-10 md:my-20">
+                <h2 class="font-bold text-[#f48b08] text-3xl md:text-4xl ">About Us</h2><br>
+                <div class="container space-y-10 xl:space-y-0">
+                    <p>Established in 2020, At WeOn Skin and Personal Care, we are dedicated to the belief that every individual deserves the opportunity to look and feel their absolute best. This unwavering commitment drives our extensive selection of premium skincare and personal care products, all meticulously designed to assist you in achieving your desired aesthetic and well-being goals.</p>
+                    <br>
+                    <p>Our product formulations are crafted exclusively with natural ingredients, proudly free from any harmful chemicals. With a comprehensive range catering to diverse skin types and concerns, our highly knowledgeable team stands ready to provide personalized guidance in selecting the perfect product to address your unique needs.</p>
+                    <br>
+                    <p>Our core conviction centers on making beauty and personal care accessible to all, and to this end, we offer an array of cost-effective options that ensure quality without compromise. Whether you’re in search of a superior foundation or an exquisite eyeshadow palette, we’ve curated a selection that aligns with your discerning tastes and discerning budget.</p>
+                    <br>
+                    <p>We extend our sincere gratitude to you for choosing WeOn Skin and Personal Care as your partner in the pursuit of elevated beauty and self-confidence. Your trust in our products and services fuels our ongoing commitment to excellence.</p>
+                </div>
+                <div></div>
+            </div>
+            <div class="container mx-auto my-20 p-[19px] md:p-[32px]">
+                <div>
+                            <div class="flex flex-col gap-5 item-center justify-between md:flex-row bg-white rounded-md p-6">
+                                <div class="flex flex-col item-center justify-between gap-3">
+                                    <h1 class="md:w-[40vw] font-bold text-3xl py-6">Pranjal Jalora</h1>
+                                    <p>
+                                        " I can't get enough of the Vitamin C Glow Booster Face Wash! My skin feels refreshed, and my glow is unstoppable. "
+                                    </p>
+                                    <p class="text-[13px] text-gray-400">
+                                        " The Vitamin C Glow Booster Face Wash is my daily essential. I can't get enough of it! It invigorates my skin, leaving it refreshed and positively radiant. It's the secret to my unstoppable glow, and I wouldn't go a day without it in my skincare routine. "
+                                    </p>
+
+                                </div>
+                                <div class="mx-auto md:w-[60vw] flex flex-col item-center">
+                                    <img src="./assets/testimonial-img.jpeg" alt="review_image" class="rounded-sm">
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Products -->
+        <section id="shop" class="">
+            <div class="flex items-center justify-center mb-40"> 
+                <h2 class="font-bold text-[#f48b08] text-3xl md:text-4xl ">Our Products</h2>
+            </div>
+
+            <div class="container mx-auto my-20 p-[19px] md:p-[32px] w-full grid grid-cols-1 gap-x-8 gap-y-40 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-4">
+                <!-- card-1 -->
+                <div class="group p-10 pt-24 rounded-md bg-[#cbb595] relative ">
+                    <img src="./assets/Cleansear.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-top-8">
+                    <h3>Vitamin C Glow Booster Foaming Face Wash</h3>
+                    <div class="text-yellow-500 py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="flex item-center justify-between">
+                        <p class="text-xl"><s>&#x20B9 269</s> &#x20B9 199 </p>
+                        <button class="bg-[#f48b08] px-2 py-1 rounded-sm text-xl">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="group p-10 pt-24 rounded-md bg-[#cbb595] relative ">
+                    <img src="./assets/serum.png" alt="product_Images" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-top-8">
+                    <h3>Vitamin C & Coenzyme Q10 Face Serum</h3>
+                    <div class="text-yellow-500 py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="flex item-center justify-between">
+                        <p class="text-xl"><s>&#x20B9 599</s> &#x20B9 399 </p>
+                        <button class="bg-[#f48b08] px-2 py-1 rounded-sm text-xl">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="group p-10 pt-24 rounded-md bg-[#cbb595] relative ">
+                    <img src="./assets/Moisturizers.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-top-8">
+                    <h3>Vitamin C Moisturizer</h3>
+                    <div class="text-yellow-500 py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="flex item-center justify-between">
+                        <p class="text-xl"><s>&#x20B9 279</s> &#x20B9 190 </p>
+                        <button class="bg-[#f48b08] px-2 py-1 rounded-sm text-xl">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- card 4 -->
+                <div class="group p-10 pt-24 rounded-md bg-[#cbb595] relative ">
+                    <img src="./assets/Body_wash.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-top-8">
+                    <h3>Coffee & Warm Vanilla Body Was</h3>
+                    <div class="text-yellow-500 py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="flex item-center justify-between">
+                        <p class="text-xl"><s>&#x20B9 279</s> &#x20B9 169 </p>
+                        <button class="bg-[#f48b08] px-2 py-1 rounded-sm text-xl">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- card 5 -->
+                <div class="group p-10 pt-24 rounded-md bg-[#cbb595] relative ">
+                    <img src="./assets/Body_lotion.png" alt="" class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-top-8">
+                    <h3>Collagen & Vitamin E Body Lotion</h3>
+                    <div class="text-yellow-500 py-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="flex item-center justify-between">
+                        <p class="text-xl"><s>&#x20B9 249</s> &#x20B9 189 </p>
+                        <button class="bg-[#f48b08] px-2 py-1 rounded-sm text-xl">
+                            <i class="ri-shopping-cart-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Footer -->
+          <footer id="contact" class="bg-[#cbb595] pt-20 pb-10 md:pt-28 relative">
+            <!-- newsletter -->
+             <div class="container mx-auto p-[32px] absolute top-0 right-0  left-0 -translate-y-1/2">
+                <div class="bg-white px-10 pt-5 pb-10 space-y-5 rounded-md">
+                    <h3><span class="text-[#f48b08]">Subscribe</span> to our newsletter</h3>
+                    <div class="flex flex-col md:flex-row gap-1">
+                        <input type="email" placeholder="Your Email Address" class="w-full px-5 py-3 rounded-md ">
+                        <p class="invisible peer-invalid:visible text-red-700 font-light">
+                            Please enter a valid email address
+                        </p>
+                        <button id="subscribe" class="flex items-center justify-center gap-1 bg-[#f48b08] px-5 py-3 rounded-md hover:opacity-80 duration-300" onclick="subscribe()">
+                            <span>Subscribe</span>
+                            <i class="ri-send-plane-2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+             </div>
+
+            <!-- Social Icon -->
+             <div class="container mx-auto p-[19px] md:p-[32px] mt-16 mb-10">
+                <div class="border-b border-[#f48b08] relative">
+                    <div class="absolute top-0 transform -translate-y-1/2 left-0 right-0 max-w-36 mx-auto">
+                        <div class="bg-[#cbb595] text-lg text-center space-x-2">
+                            <i class="ri-facebook-fill hover:text-[#f48b08] duration-300 cursor-pointer"></i>
+                            <i class="ri-twitter-x-line hover:text-[#f48b08] duration-300 cursor-pointer"></i>
+                            <i class="ri-instagram-line hover:text-[#f48b08] duration-300 cursor-pointer"></i>
+                            <i class="ri-linkedin-fill hover:text-[#f48b08] duration-300 cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+            <!-- content -->
+            <div class="container mx-auto p-[19px] md:p-[32px] grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-start">
+                    <!-- item 1 -->
+                     <div>
+                        <div class="flex: mx-auto">
+                            <p class="mb-5 font-bold text-xl">About Us</p>
+                            <p>At WeOn Skin and Personal Care, we are dedicated to the belief that every individual deserves the opportunity to look and feel their absolute best. This unwavering commitment drives our extensive selection of premium skincare and personal care products, all meticulously designed to assist you in achieving your desired aesthetic and well-being goals.</p>
+                        </div>
+                     </div>
+                    <!-- item 2 -->
+                    <div>
+                        <p class="mb-5 font-bold text-xl">Quick Link</p>
+
+                        <div class="flex flex-col gap-3">
+                            <a href="#" class="hover:text-black">Customer Service</a>
+                            <a href="#" class="hover:text-black">Shop</a>
+                            <a href="#" class="hover:text-black">About Us</a>
+                            <a href="#" class="hover:text-black">Shipping Policy</a>
+                            <a href="#" class="hover:text-black">Return and Refund Policy</a>
+                            <a href="#" class="hover:text-black">Privacy Policy</a>
+                            <a href="#" class="hover:text-black">Terms & Conditions</a>
+                        </div>
+                      </div>
+                    <!-- item 3  -->
+                    <div>
+                        <p class="mb-5 font-bold text-xl">Contact</p>
+
+                        <div class="flex flex-col gap-5">
+                            <p class="hover:text-black cursor-pointer">Address1: J-1/701, Seventh floor, Pushkar sky, Viratnagar Manmohan Cross Road, Ahmedabad Gujarat 382415</p>
+                            <p class="hover:text-black cursor-pointer">E-mail: infoweon2023@gmail.com</p>
+                            <p class="hover:text-black cursor-pointer">Phone : +91 6353393915</p>
+                        </div>
+                      </div>  
+            </div>
+            </div>
+
+            <!-- copyright -->
+             <div class="container mx-auto p-[19px] md:p-[32px]">
+                <p class="text-center mt-10 opacity-50">Copyright &copy; 2023 WeonCare All rights reserved.</p>
+             </div>
+
+          </footer>
+
+          <!-- Scroll Up -->
+           <a href="#" id="scroll-up" class="fixed right-4 -bottom-1/2 bg-[#f48b08] shadow-sm inline-block px-3 py-1 md:px-4 md:py-2 rounded-md text-lg z-50 hover:-translate-y-1 duration-300">
+            <i class="ri-arrow-up-line"></i>
+           </a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
